@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Mitr&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Mitr", sans-serif;
+	color: rgb(242, 242, 242);
+}
+
+html {
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(
+		290deg,
+		rgb(252, 118, 106),
+		rgb(249, 161, 46, 50%),
+		rgb(155, 74, 151, 100%)
+	);
+}
+
+#game {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#dashboard {
+	display: flex;
+	justify-content: start;
+	gap: 1.25rem;
+	margin-bottom: 1.25rem;
+}
+
+#start-btn {
+	background: rgb(252, 118, 106);
+	border-radius: 0.4rem;
+	width: 90px;
+	height: 60px;
+	border: none;
+	cursor: pointer;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+	font-size: 1.2rem;
+}
+
+#reset-btn {
+	background: rgb(252, 118, 106);
+	border-radius: 0.4rem;
+	width: 90px;
+	height: 60px;
+	border: none;
+	cursor: pointer;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+	font-size: 1.2rem;
+}
+
+#start-btn:hover,
+#reset-btn:hover {
+	opacity: 80%;
+}
+
+#start-btn:active,
+#reset-btn:active {
+	transform: scale(1.1);
+}
+
+#start-btn,
+#reset-btn {
+	font-family: "Permanent Marker", cursive;
+}
+
+.btn-disabled {
+	color: rgb(77, 76, 76);
+}
+
+#stats {
+	color: rgb(235, 234, 234);
+	font-size: 1.15rem;
+}
+
+#board-container {
+	position: relative;
+}
+
+#board,
+#win {
+	border-radius: 0.5rem;
+	box-shadow: 0 1.8rem 3.5rem rgba(68, 68, 68, 0.2);
+	background: linear-gradient(
+		120deg,
+		rgb(155, 74, 151),
+		rgb(249, 161, 46, 30%),
+		rgb(252, 118, 106)
+	);
+	transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+	backface-visibility: hidden;
+}
+
+#board {
+	padding: 1.25rem;
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	gap: 1.25rem;
+}
+
+#board-container.flipped #board {
+	transform: rotateY(180deg) rotateZ(50deg);
+}
+
+#board-container.flipped #win {
+	transform: rotateY(0) rotateZ(0);
+}
+
+.card {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+}
+
+.card-front,
+.card-back {
+	position: absolute;
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		325deg,
+		rgb(249, 161, 46),
+		rgb(221, 221, 221),
+		rgb(252, 118, 106)
+	);
+	transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+	backface-visibility: hidden;
+}
+
+.card-back {
+	transform: rotateY(180deg) rotateZ(50deg);
+	font-size: 1.9rem;
+	-webkit-user-select: none;
+	user-select: none;
+	text-align: center;
+	line-height: 6.4rem;
+	background: rgb(239, 212, 174);
+}
+
+.card.flipped .card-front {
+	transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.card.flipped .card-back {
+	transform: rotateY(0) rotateZ(0);
+}
+
+#win {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transform: rotateY(180deg) rotateZ(50deg);
+	background: wheat;
+}
+
+.win-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.6rem;
+	color: rgb(252, 118, 106);
+}
+
+.highlight {
+	color: rgb(155, 74, 151);
+}

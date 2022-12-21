@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles.css" />
+		<title>Memory Match Game</title>
+	</head>
+	<body>
+		<div id="game">
+			<div id="dashboard">
+				<button id="start-btn">START</button>
+				<input value='RESET' type="button" id="reset-btn"></input>
+				<div id="stats">
+					<div id="moves">MOVES MADE: 0</div>
+					<div id="timer">TIME ELAPSED: 0 SECONDS</div>
+				</div>
+			</div>
+			<div id="board-container">
+				<div id="board" data-dimension="4"></div>
+				<div id="win">You've won!</div>
+			</div>
+		</div>
+	</body>
+	<script src="./script.js" defer></script>
+</html>
